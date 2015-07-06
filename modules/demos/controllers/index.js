@@ -7,3 +7,8 @@ exports.testCurl	= function(req, res){
 
 	util.response(res, { name : "mgrush" });
 };
+
+exports.testSha1	= function(){
+	var util		= require(__dirname + "/../../../components/util");
+	console.log( util.sha1("mgrush") == "dd5eaa897a09360948e1d52213830439e44b4faf" );
+}

@@ -21,3 +21,25 @@ exports.curl = function(url, params, callback){
 		callback && callback(err, response, body);
 	});
 };
+
+//执行sha1（secure hash）加密
+exports.sha1 = function(string){
+	return require(__dirname + "/sha1").hex_sha1(string);
+};
+
+//串行执行一些的函数方法
+exports.series = function(funcList){
+	var funcList	= (new Object()).toString.call(funcList) == "[object Array]" ? funcList : [],
+		next		= function(err, data){
+			if(err) {
+				throw err;
+			}
+
+			var func	= funcList.shift();
+			if(func) {
+				func.call(null, next, data);
+			}
+		};
+
+	next();
+}

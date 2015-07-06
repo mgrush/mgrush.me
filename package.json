@@ -20,6 +20,7 @@
     "static-favicon": "~1.0.0",
 	"socket.io": "*",
 	"redis": "*",
-	"request": "*"
+	"request": "*",
+	"wechat": "*"
   }
 }
