@@ -1,0 +1,130 @@
+@widthLeft : 280px;
+@widthRight : 740px;
+@padding : 10px;
+@normalLineHeight : 20px;
+@titleLineHeight : 24px;
+@imgWidth : 120px;
+@normalFontSize : 14px;
+@titleFontSize : 16px;
+
+.main-content {
+	width:  @widthLeft + @widthRight;
+	display: table;
+	margin: 0px auto;
+	border-radius: 4px;
+	position: relative;
+	border: 1px solid #ccc;
+	font-size: @normalFontSize;
+	
+	article, aside {
+		padding: @padding;
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	aside {
+		padding: (@padding * 3) @padding @padding (@padding * 5);
+	}
+}
+
+article {
+	background-color: #33CC99;
+	width: (@widthLeft - @padding * 2);
+
+	.contacts {
+		text-align: center;
+
+		img {
+			width: @imgWidth;
+			height: @imgWidth;
+			margin-bottom: 10px;
+			border-radius: @imgWidth;
+			border: 3px solid #fff;
+		}
+
+		h3 {
+			color: #fff;
+			padding: 0px;
+			margin: 0px;
+			font-size: @titleFontSize;
+			height: @titleLineHeight;
+			line-height: @titleLineHeight;
+		}
+	}
+
+	dl {
+		padding: 0px;
+		margin: 10px 0px 0px 0px;
+
+		dt {
+			margin: 10px 0px 4px 0px;
+			font-size: @titleFontSize;
+			height: @titleLineHeight;
+			line-height: @titleLineHeight;
+
+			i { 
+				color: #fff; 
+				top: -3px;
+				position: relative;
+				margin-right: 10px;
+			}
+		}
+
+		dd {
+			margin: 0px;
+			height: @normalLineHeight;
+			line-height: @normalLineHeight;
+		}
+	}
+}
+
+aside {
+	width: (@widthRight - @padding * 2);
+	
+	.vertical-line {
+		position: relative;
+		padding-left: 36px;
+
+		div {
+			font-size: @titleFontSize;
+			padding: 10px 0px 5px 0px;
+		}
+
+		p {
+			padding: 0px;
+			margin: 0px;
+			line-height: 20px;
+			color: #999;
+
+		}
+
+		&:hover p {
+			color: #000;
+			cursor: pointer;
+		}
+
+		.indent {
+			text-indent: 2em;
+		}
+
+		&:before, &:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			top: 10px;
+			left: 12px;
+			width: 12px;
+			height: 12px;
+			border-radius: 12px;
+			background: #000;
+		}
+
+		&:after {
+			top: 16px;
+			left: 16px;
+			bottom: -32px;
+			width: 4px;
+			height: auto;
+		}
+	}
+}

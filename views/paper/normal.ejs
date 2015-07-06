@@ -1,0 +1,34 @@
+<link type="text/css" rel="stylesheet" href="/stylesheets/bootstrap/css/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet" href="/stylesheets/paper-normal.css" />
+
+<div class="main-content">
+	<article>
+		<section class="contacts">
+			<img src="<%= paper.icon %>"/>
+			<h3>电话：<%= paper.tel %></h3>
+			<h3>邮箱：<%= paper.email %></h3>
+		</section>
+
+		<section class="base">
+			<dl>
+			<% paper.base.forEach(function(item){ %>
+				<dt><i class="<%= item.icon %>"></i><%= item.title %></dt>
+				<dd><%= item.content %></dd>
+			<% }) %>
+			</dl>
+		</section>
+	</article>
+
+	<aside>
+		<section class="time-line">
+			<% paper.timelines.forEach(function(item){ %>
+				<div class="vertical-line">
+					<div><%= item.title %></div>
+					<% item.contents.forEach(function(content){ %>
+					<p><%= content %></p>
+					<% }) %>
+				</div>
+			<% }) %>
+		</section>
+	</aside>
+</div>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="/stylesheets/c.css" />
+	<script type="text/javascript" src="/javascripts/lib/socket.io.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+	<style type="text/css">
+		.card {
+			display: inline-block;
+			width: 300px;
+			border: 1px solid #ccc;
+			border-radius: 8px 0px 0px 0px;
+		}
+		.card .info { 
+			height: 120px;
+		}
+		.card .items {
+			padding: 0px;
+			margin: 0px;
+		}
+		.card .items li {
+			display: inline-block;
+			float: left;
+			width: 59px;
+			height: 60px;
+			border-right: 1px solid #ccc;
+		}
+		.card .items li:last-child {
+			width: 60px;
+			border-right: none;
+		}
+	</style>
+	<section class="card">
+		<div class="info">
+		
+		</div>
+		<ul class="items">
+			
+		</ul>
+	</section>
+
+  </body>
+  <script type="text/javascript">
+	var socket	= io.connect("http://localhost:5000");
+	socket.on("USER_COUNT", function(data){
+		alert("系统当前拥有个" + data + "用户！");		
+	});
+
+	socket.emit("USER_COUNT");
+  </script>
+</html>
