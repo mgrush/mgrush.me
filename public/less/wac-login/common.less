@@ -1,0 +1,251 @@
+@backgroundColor: #f2f2f2;
+@borderColor: #d8d8d8;
+
+@itemHeight: 5.0rem;
+@itemBackgroundColor: #fff;
+@paddingLeft: 1.5rem;
+@paddingRight: 1.5rem;
+@largeFontColor: #333333;
+@largeFontSize: 1.7rem;
+
+@normalFontColor: #666666;
+@normalFontSize: 1.5rem;
+@lightFontColor: #aeaeb2;
+
+@smallFontSize: 1.4rem;
+
+@buttonHeight: 4.0rem;
+@buttonBorderColor: #fa7c14;
+@buttonFontSize: 1.8rem;
+
+@iconRadius: 4.5rem;
+@iconColor: #51c48a;
+
+body {
+	color: @normalFontColor;
+	font-family: "细体";
+	background-color: @backgroundColor;
+}
+
+.hidden, *[hidden] {
+	display: none !important;
+}
+
+.rect-item {
+	position: relative;
+	height: @itemHeight;
+	line-height: @itemHeight;
+	background: @itemBackgroundColor;
+	border-top: 0.1rem solid @borderColor;
+	padding: 0rem @paddingRight 0rem @paddingLeft;
+
+	.title {
+		top: 0rem;
+		bottom: 0rem;
+		position: absolute;
+		color: @largeFontColor;
+		font-size: @largeFontSize;
+		left: @paddingLeft;
+	}
+
+	.item-content {
+		text-align: right;	
+		position: relative;
+		color: @normalFontColor;
+		font-size: @normalFontSize;
+
+		.button {
+			color: #fff;
+			display: inline-block;
+			background-color: #d0d0d0;
+			padding: 0.2rem 0.4rem;
+			border-radius: 0.3rem;
+			height: 2.0rem;
+			line-height: 2.0rem;
+		}
+
+		.half-height {
+			display: block;
+			height: @itemHeight / 2;
+			line-height: @itemHeight / 2;
+		}
+
+		.warning {
+			color: #f77c19;
+			font-size: 1.2rem;
+		}
+	}
+
+	&.arrow {
+		padding-right: @paddingRight * 2;
+	}
+
+	&.arrow::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 1.0rem;
+		height: 1.0rem;
+		top: 50%;
+		right: @paddingRight;
+		border-top: 1px solid #b6b6b6;
+		border-right: 1px solid #b6b6b6;
+		-webkit-transform: rotate(45deg) translateY(-50%);
+	}
+
+	&:last-child {
+		border-bottom: 0.1rem solid @borderColor;
+	}
+
+	.input-button {
+		position: absolute;
+		display: inline-block;
+		height: 3.0rem;
+		line-height: 3.0rem;
+		padding: 0rem 0.8rem;
+		border-radius: 0.4rem;
+		font-size: 1.3rem;
+		border: 0.1rem solid #acacac;
+		top: 50%;
+		right: @paddingRight;
+		-webkit-transform: translateY(-50%);
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+}
+
+.section-block {
+	background: @itemBackgroundColor;
+	border-top: 0.1rem solid @borderColor;
+	border-bottom: 0.1rem solid @borderColor;
+
+	.rect-item {
+		padding-left: 0rem;
+		margin-left: @paddingLeft;
+
+		.title {
+			left: 0rem;
+		}
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.section-guide, .guide {
+	height: 2.4rem;
+	line-height: 1.9rem;
+	color: @lightFontColor;
+	padding-left: @paddingLeft;
+	padding-right: @paddingRight;
+	word-break: break-all;
+}
+
+.submit-button {
+	display: block;
+	font-family: "华文黑体";
+	height: @buttonHeight;
+	line-height: @buttonHeight;
+	color: @buttonBorderColor;
+	font-size: @buttonFontSize;
+	background-color: @itemBackgroundColor;
+	text-align: center;
+	border: 0.1rem solid @buttonBorderColor;
+	border-radius: 0.4rem;
+}
+
+.success-icon {
+	position: relative;
+	display: inline-block;
+	width: @iconRadius;
+	height: @iconRadius;
+	border-radius: @iconRadius;
+	border: 0.1rem solid @iconColor;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		display: inline-block;
+		width: @iconRadius / 2;
+		height: @iconRadius / 3;
+		border-left: 0.2rem solid @iconColor;
+		border-bottom: 0.2rem solid @iconColor;
+		-webkit-transform: rotate(-45deg) translateY(-100%) translateX(0%);
+	}
+}
+
+.mgtop25 {
+	margin-top: 2.5rem;
+}
+
+.mgbottom25 {
+	margin-bottom: 2.5rem;
+}
+
+.mgtop10 {
+	margin-top: 1.0rem;
+}
+
+.mgbottom10 {
+	margin-bottom: 1.0rem;
+}
+
+.mgleft15 {
+	margin-left: 1.5rem;
+}
+
+.mgright15 {
+	margin-right: 1.5rem;
+}
+
+.mgtop50 {
+	margin-top: 5.0rem;
+}
+
+.mgbottom50 {
+	margin-bottom: 5.0rem;
+}
+
+.padding10 {
+	padding: 1.0rem 0rem;
+}
+
+.padding5 {
+	padding: 0.5rem 0rem;
+}
+
+.hcenter {
+	text-align: center;
+}
+
+.largeFont {
+	font-size: @largeFontSize;
+}
+
+.darkFont {
+	color: @largeFontColor;
+}
+
+.normalFont {
+	font-size: @normalFontSize;
+}
+
+.lightDarkFont {
+	color: @normalFontColor;
+}
+
+.lightFont {
+	color: @lightFontColor;
+}
